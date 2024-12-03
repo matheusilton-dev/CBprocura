@@ -1,7 +1,6 @@
 import requests
 from string import ascii_letters,digits
 from random import choice
-from os import system
 
 caracteres = ascii_letters[:26] + digits
 with open("links_encontrados.txt","w") as links:
@@ -14,7 +13,6 @@ def procura(string,formato):
      print(f"testando {string}.{formato}")
      if link_testado.status_code == 200:
         print(f"LINK ENCONTRADO!!!{string}.{formato}")
-        system("PARABAINS.mp3")
         with open("links_encontrados.txt","a") as links:
             links.write(link_testado.url + "\n")
 
