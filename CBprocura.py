@@ -7,6 +7,8 @@ with open("links_encontrados.txt","w") as links:
     pass
 
 formato = input("escolha os formatos a serem procurados separados por virgula.\nescolha: ").split(",")
+if formato == [""]:
+    formato = ["pdf","doc","docx","jpg","png","gif","webp","mp3","wav","mp4","avi","txt","zip","rar"]
 
 def procura(string,formato):
      link_testado = requests.get(f"https://files.catbox.moe/{string}.{formato}")
